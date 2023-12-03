@@ -2,6 +2,7 @@
 const {connectWithRetry} = require("./database/conection")
 const cors = require("cors")
 const express= require("express")
+
 //Mensaje de Inicio
 
 console.log("API arrancada")
@@ -21,7 +22,13 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))//Datos a de este formato a objeto JS
 
 //Cargar rutas
+const UserRoutes = require("./routes/user")
+const PublicationRoutes = require("./routes/pubication")
+const FollowRoutes = require("./routes/follow")
 
+app.use("/api", UserRoutes)
+app.use("/api", PublicationRoutes)
+app.use("/api", FollowRoutes)
 
 //Poner servidor a escuchar peticiones htpp
 app.listen(puerto, () =>{
