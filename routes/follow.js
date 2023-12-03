@@ -1,9 +1,9 @@
 const express = require ("express")
-const router = express.router()
+const router = express.Router()
 const followController = require("../controllers/follow")
 
 //Definir Rutas
-router.get("/prueba-usuario", followController.pruebaFollow)
+router.get("/prueba-follow", followController.pruebaFollow)
 
 //Exportar router
-module.exports= {router}
+module.exports= router

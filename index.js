@@ -23,12 +23,12 @@ app.use(express.urlencoded({extended:true}))//Datos a de este formato a objeto J
 
 //Cargar rutas
 const UserRoutes = require("./routes/user")
-const PublicationRoutes = require("./routes/pubication")
+const PublicationRoutes = require("./routes/publication")
 const FollowRoutes = require("./routes/follow")
 
-app.use("/api", UserRoutes)
-app.use("/api", PublicationRoutes)
-app.use("/api", FollowRoutes)
+app.use("/api/user", UserRoutes)
+app.use("/api/publication", PublicationRoutes)
+app.use("/api/follow", FollowRoutes)
 
 //Poner servidor a escuchar peticiones htpp
 app.listen(puerto, () =>{
